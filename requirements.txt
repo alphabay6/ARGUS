@@ -1,0 +1,20 @@
+# Runtime dependencies.  Install with: python -m pip install -r requirements.txt
+adbutils>=2.0.0
+exifread>=3.0.0
+Pillow>=10.0.0
+python-magic>=0.4.27
+gradio>=4.0.0
+pandas>=2.0.0
+pydantic>=2.0.0
+
+# No android-backup-extractor dependency is required: parse.py contains a
+# defensive parser for unencrypted .ab files and deliberately rejects encrypted
+# backups.  No sqlite-dissect dependency is required either: parse.py contains
+# the conservative live/WAL/freelist/unallocated SQLite recovery path used by
+# this project.  Both names are omitted because the former is not published as
+# an installable package on PyPI and the latter is not imported at runtime.
+
+# Optional, authorized escalation/analysis integrations:
+# frida-tools>=12.0.0
+# volatility3>=2.5.0
+# scapy>=2.5.0
